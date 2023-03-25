@@ -1,5 +1,7 @@
 package com.micro.services.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,9 +27,14 @@ public class EmployeeV1Controller {
 	public Employee post(@RequestBody Employee employee) {
 		return employeeService.save(employee);
 	}
+	
+	@GetMapping
+	public List<Employee> getAllEmployees() {
+		return employeeService.getAllEmployees();
+	}
 
 	@GetMapping("/{id}")
-	public Employee get(@PathVariable String id) {
+	public Employee getEmployeeById(@PathVariable String id) {
 		return employeeService.get(id);
 	}
 

@@ -1,13 +1,10 @@
 package com.micro.services.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties({"name","email"})
+//@JsonIgnoreProperties({"name","email"})
 public class Employee {
 
 	private String id;
-	@JsonIgnore
+	//@JsonIgnore
 	private String name;
 	private String email;
 

@@ -41,4 +41,10 @@ public class EmployeeV1ServiceImpl implements EmployeeService {
 		return "Employee has been deleted with this id " + id;
 	}
 
+	@Override
+	public List<Employee> getAllEmployees() {
+		
+		return employeesList;
+	}
+
 }

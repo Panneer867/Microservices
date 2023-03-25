@@ -1,5 +1,7 @@
 package com.micro.services.service;
 
+import java.util.List;
+
 import com.micro.services.model.Employee;
 
 public interface EmployeeService {
@@ -9,4 +11,6 @@ public interface EmployeeService {
 	Employee get(String id);
 
 	String delEmpById(String id);
+
+	List<Employee> getAllEmployees();
 }
