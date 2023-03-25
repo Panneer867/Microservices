@@ -4,9 +4,9 @@ import com.micro.services.model.Employee;
 
 public interface EmployeeService {
 
-	Employee postEmp(Employee employee);
+	Employee save(Employee employee);
 
-	Employee getEmp(String id);
+	Employee get(String id);
 
 	String delEmpById(String id);
 }

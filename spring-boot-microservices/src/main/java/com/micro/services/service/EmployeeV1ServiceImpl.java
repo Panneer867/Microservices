@@ -12,32 +12,32 @@ import com.micro.services.model.Employee;
 @Service
 public class EmployeeV1ServiceImpl implements EmployeeService {
 
-	List<Employee> ll = new ArrayList<>();
+	List<Employee> employeesList = new ArrayList<>();
 
 	@Override
-	public Employee postEmp(Employee employee) {
+	public Employee save(Employee employee) {
 
 		if (employee.getId() == null) {
 			employee.setId(UUID.randomUUID().toString());
 		}
-		ll.add(employee);
+		employeesList.add(employee);
 
 		return employee;
 	}
 
 	@Override
-	public Employee getEmp(String id) {
+	public Employee get(String id) {
 
-		return ll.stream().filter(s -> s.getId().equals(id)).findFirst()
+		return employeesList.stream().filter(s -> s.getId().equals(id)).findFirst()
 				.orElseThrow(() -> new EmployeNotFoundException("Employee not Found with this id"));
 	}
 
 	@Override
 	public String delEmpById(String id) {
 
-		Employee user = ll.stream().filter(e -> e.getId().equalsIgnoreCase(id)).findFirst().get();
+		Employee user = employeesList.stream().filter(e -> e.getId().equalsIgnoreCase(id)).findFirst().get();
 
-		ll.remove(user);
+		employeesList.remove(user);
 		return "Employee has been deleted with this id " + id;
 	}
 
