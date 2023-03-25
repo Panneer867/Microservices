@@ -1,6 +1,5 @@
 package com.micro.services.controller;
 
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +15,7 @@ import com.micro.services.service.EmployeeService;
 
 @RestController
 @RequestMapping("/v1")
-public class HomeController {
+public class EmployeeV1Controller {
 	
 	@Autowired(required=true)
 	private EmployeeService employeeService;
@@ -50,13 +49,13 @@ public class HomeController {
 	}
 
 	@PostMapping("/postuser")
-	public List<Employee> post(@RequestBody Employee user) {
-		return employeeService.postEmploye(user);
+	public Employee post(@RequestBody Employee employee) {
+		return employeeService.postEmp(employee);
 	}
 	
 	@GetMapping("/getuser/{id}")
 	public Employee get(@PathVariable String id) {
-		return employeeService.getEmploye(id);
+		return employeeService.getEmp(id);
 	}
 	
 	

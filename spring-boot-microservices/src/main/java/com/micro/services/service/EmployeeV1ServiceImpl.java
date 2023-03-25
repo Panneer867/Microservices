@@ -10,35 +10,35 @@ import com.micro.services.exception.EmployeNotFoundException;
 import com.micro.services.model.Employee;
 
 @Service
-public class EmployeeImpl implements EmployeeService {
+public class EmployeeV1ServiceImpl implements EmployeeService {
 
 	List<Employee> ll = new ArrayList<>();
 
 	@Override
-	public List<Employee> postEmploye(Employee user) {
+	public Employee postEmp(Employee employee) {
 
-		if (user.getId() == null) {
-			user.setId(UUID.randomUUID().toString());
+		if (employee.getId() == null) {
+			employee.setId(UUID.randomUUID().toString());
 		}
-		ll.add(user);
+		ll.add(employee);
 
-		return ll;
+		return employee;
 	}
 
 	@Override
-	public Employee getEmploye(String id) {
+	public Employee getEmp(String id) {
 
 		return ll.stream().filter(s -> s.getId().equals(id)).findFirst()
-				.orElseThrow(() -> new EmployeNotFoundException(" Employee not Found"));
+				.orElseThrow(() -> new EmployeNotFoundException("Employee not Found with this id"));
 	}
 
 	@Override
 	public String delEmpById(String id) {
 
 		Employee user = ll.stream().filter(e -> e.getId().equalsIgnoreCase(id)).findFirst().get();
-		
+
 		ll.remove(user);
-		return "Employee has ben deleted with the id " + id;
+		return "Employee has been deleted with this id " + id;
 	}
 
 }

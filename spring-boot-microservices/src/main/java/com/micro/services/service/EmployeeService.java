@@ -1,13 +1,12 @@
 package com.micro.services.service;
 
-import java.util.List;
 import com.micro.services.model.Employee;
 
 public interface EmployeeService {
 
-	List<Employee> postEmploye(Employee user);
+	Employee postEmp(Employee employee);
 
-	Employee getEmploye(String id);
+	Employee getEmp(String id);
 
 	String delEmpById(String id);
 }
