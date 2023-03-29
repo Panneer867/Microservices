@@ -51,8 +51,8 @@ public class EmployeeV2ServiceImpl implements EmployeeService {
 
 	@Override
 	public String delEmpById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		employeeRepository.deleteById(id);
+		return "Employee deleted with this id "+ id;
 	}
 
 	@Override
