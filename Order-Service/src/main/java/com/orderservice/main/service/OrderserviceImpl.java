@@ -2,6 +2,7 @@ package com.orderservice.main.service;
 
 import java.time.Instant;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.orderservice.main.entity.Order;
@@ -14,6 +15,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class OrderserviceImpl implements OrderService {
 	
+	@Autowired
 	private OrderRepository orderRepository;
 	
 	@Override
@@ -26,6 +28,7 @@ public class OrderserviceImpl implements OrderService {
 				.OrderStatus("CREATED")
 				.productId(orderRequest.getProductId())
 				.orderDate(Instant.now())
+				.quantity(orderRequest.getQuantity())
 				.build();
 		
 		orderRepository.save(order);
