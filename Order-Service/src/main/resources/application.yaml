@@ -13,8 +13,8 @@ spring:
       ddl-auto: update
   application:
     name: ORDER-SERVICE
-    
-    eureka:
+      
+eureka:
   instance:
     prefer-ip-address: true
   client :

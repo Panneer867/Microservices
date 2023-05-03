@@ -10,15 +10,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ProductServiceCustomException extends RuntimeException {
-	
+
+	private static final long serialVersionUID = 1L;
 	private String errCode;
 
 	public ProductServiceCustomException(String message, String errCode) {
 		super(message);
 		this.errCode = errCode;
 	}
-	
-	
-	
 
 }
