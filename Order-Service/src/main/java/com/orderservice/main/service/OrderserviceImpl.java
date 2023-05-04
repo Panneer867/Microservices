@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.orderservice.main.entity.Order;
+import com.orderservice.main.external.client.ProductService;
 import com.orderservice.main.model.OrderRequest;
 import com.orderservice.main.repository.OrderRepository;
 
@@ -18,11 +19,17 @@ public class OrderserviceImpl implements OrderService {
 	@Autowired
 	private OrderRepository orderRepository;
 	
+	@Autowired
+	private ProductService productService;
+	
 	@Override
 	public long placeOrder(OrderRequest orderRequest) {
 		
-		
 		log.info("Placing Order Request: {}",orderRequest);
+		
+		productService.reduceQuantity(orderRequest.getProductId(), orderRequest.getQuantity());
+		
+		log.info("Creating order with status CREATED");
 		Order order = Order.builder()
 				.amount(orderRequest.getTotalAmount())
 				.OrderStatus("CREATED")
