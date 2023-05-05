@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          branch: master
-          uri: git@github.com:Panneer867/spring-boot-microservice-config.git
+          uri: 'git@github.com:Panneer867/spring-boot-microservice-config.git'
+          default-label: master
           cloneOnStart: true
-          bootstrap: true
+        

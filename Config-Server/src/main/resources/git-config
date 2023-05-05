@@ -1,0 +1,40 @@
+To generate an SSH key pair :-
+-------------------------------
+
+1. Goto user folder and create .ssh folder
+
+2. Generate ssh key : 
+
+	ssh-keygen -t rsa -b 4096 -C "Panneer867@live.com"
+	
+3. Add your SSH key to the ssh-agent: 
+
+	1. Start the ssh-agent : 
+	
+		eval $(ssh-agent -s)
+		
+	2. Set the environment variables: 
+	
+		ssh-add ~/.ssh/id_rsa
+		
+	3. Check that the ssh-agent is running: 
+	
+		ssh-add -l
+		
+4. SSH url 
+	
+	git@github.com:Panneer867/spring-boot-microservice-config.git
+	
+5. To Authenticate
+	
+	1. Verify the host key of the remote Git repository: 
+	
+		ssh-keyscan github.com
+		
+	2. Verify your Git client configuration: 
+	
+		ssh -vT git@github.com
+		
+	
+
+
