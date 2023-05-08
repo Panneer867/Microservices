@@ -38,7 +38,7 @@ public class OrderserviceImpl implements OrderService {
 				.quantity(orderRequest.getQuantity())
 				.build();
 		
-		orderRepository.save(order);
+		order = orderRepository.save(order);
 		
 		log.info("Order Places successfully with Order Id: {}", order.getId());
 		
