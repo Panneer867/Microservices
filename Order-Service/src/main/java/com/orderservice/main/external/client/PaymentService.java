@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.orderservice.main.external.request.PaymentRequest;
 
-@FeignClient(name = "PAYMENT-SERVICE/payment")
+@FeignClient(name ="PAYMENT-SERVICE/payment")
 public interface PaymentService {
 
 	@PostMapping
