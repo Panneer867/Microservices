@@ -35,6 +35,24 @@ To generate an SSH key pair :-
 	
 		ssh -vT git@github.com
 		
-	
+================================================================================
+
+/product
+
+{
+    "name":"Iphone",
+	"price":1000,
+	"quantity":100
+}
+
+
+/order/placeorder
+
+{
+    "productId":1,
+	"quantity":10,
+	"totalAmount":1000,
+	"payments": "CASH"
+}
 
 
