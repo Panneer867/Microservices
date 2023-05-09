@@ -1,15 +1,13 @@
-package com.orderservice.main;
+package com.paymentservice.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients
-public class OrderService {
+public class PaymentServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrderService.class, args);
+		SpringApplication.run(PaymentServiceApplication.class, args);
 	}
 
 }

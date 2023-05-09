@@ -1,10 +1,10 @@
-package com.configserver.main;
+package com.orderservice.main;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ConfigServerTests {
+class OrderServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
